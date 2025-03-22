@@ -157,11 +157,25 @@
     .test-grid {
       grid-template-columns: repeat(5, 1fr);
       max-width: 1300px;
+      margin: 0 auto;
     }
-    /* Custom frames from second file */
+    /* Custom frame styles (from original and updated code) */
     .repasi-frame { border: 5px solid #010E80; }
     .bux-frame { border: 5px solid #6ec7ee; }
     .bajo-frame { border: 5px solid #bde810; }
+    .batu-frame { border: 5px solid #ffc420; }
+    .begi-frame { border: 5px solid #00fcf8; }
+    .yingyang-frame { border: 5px solid #000080; }
+    .diaz-frame { border: 5px solid #508aff; }
+    .rezso-frame { border: 5px solid #0037e3; }
+    .kuci-frame { border: 5px solid #df0000; }
+    .leves-frame { border: 5px solid #283ebb; }
+    .mosi-frame { border: 5px solid #8b19a7; }
+    .dave-frame { border: 5px solid #3bd817; }
+    .spa-frame { border: 5px solid #23f8fc; }
+    .ispi-frame { border: 5px solid #3DB42E; }
+    .urbi-frame { border: 5px solid #ffffff; }
+    .zubi-frame { border: 5px solid #1D2842; }
     .rainbow-frame {
       border: 5px solid;
       animation: rainbow 4s linear infinite;
@@ -174,7 +188,6 @@
       80% { border-color: blue; }
       100% { border-color: purple; }
     }
-
     @media (max-width: 1200px) {
       .test-grid { grid-template-columns: repeat(4, 1fr); }
     }
@@ -189,6 +202,43 @@
     }
     @media (max-width: 576px) {
       .test-grid { grid-template-columns: 1fr; }
+    }
+    /* Lightbox styles */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      transition: opacity 0.3s ease;
+    }
+    .lightbox-content {
+      max-width: 80%;
+      max-height: 80%;
+      position: relative;
+    }
+    .lightbox img {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 10px;
+    }
+    .lightbox:target {
+      display: flex;
+      opacity: 1;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2rem;
+      color: white;
+      text-decoration: none;
+      z-index: 1001;
     }
   </style>
 </head>
@@ -205,51 +255,173 @@
     </nav>
   </header>
 
+  <!-- Hero / Home Section -->
   <section id="home" class="hero">
     <h1>Welcome to 13.c</h1>
-    <p>Your one-stop hub for class updates, teacher profiles, and memorable moments.</p>
+    <p>Your one-stop hub for class updates, teacher profiles, and memorable moments. Enjoy browsing our curated content!</p>
     <button class="btn" id="greet-btn">Say Hello!</button>
   </section>
 
   <main>
-    <!-- Class Section -->
+    <!-- Class Section (integrating original class member grid) -->
     <section id="class-content">
       <h2>Class Members</h2>
       <div class="grid multi-grid">
-        <!-- Class member items from second file -->
         <div class="grid-item bux-frame">
-          <a href="#lightbox1"><img src="portrek/robux.jpg" alt="Bács Róbert Lajos"></a>
+          <a href="#lightbox1">
+            <img src="portrek/robux.jpg" alt="Bács Róbert Lajos">
+          </a>
           <p class="name-tag">Bács Róbert Lajos</p>
           <p>Robux</p>
         </div>
-        <!-- Add other class members similarly -->
+        <div class="grid-item bajo-frame">
+          <a href="#lightbox2">
+            <img src="portrek/bajo.jpg" alt="Bajó Bence">
+          </a>
+          <p class="name-tag">Bajó Bence</p>
+          <p>Diego</p>
+        </div>
+        <div class="grid-item batu-frame">
+          <a href="#lightbox3">
+            <img src="portrek/batu.jpg" alt="Batu Tamás">
+          </a>
+          <p class="name-tag">Batu Tamás</p>
+          <p>Batu</p>
+        </div>
+        <div class="grid-item begi-frame">
+          <a href="#lightbox4">
+            <img src="portrek/zsiga.jpg" alt="Begela Balázs">
+          </a>
+          <p class="name-tag">Begela Balázs</p>
+          <p>Begi</p>
+        </div>
+        <div class="grid-item yingyang-frame">
+          <a href="#lightbox5">
+            <img src="portrek/ying.jpg" alt="Demény Dávid">
+          </a>
+          <p class="name-tag">Demény Dávid</p>
+          <p>Ying</p>
+        </div>
+        <div class="grid-item diaz-frame">
+          <a href="#lightbox6">
+            <img src="portrek/diaz.jpg" alt="Divinyi Balázs">
+          </a>
+          <p class="name-tag">Divinyi Balázs</p>
+          <p>Diaz</p>
+        </div>
+        <div class="grid-item rezso-frame">
+          <a href="#lightbox7">
+            <img src="portrek/rezso.jpg" alt="Géczi Roland Levente">
+          </a>
+          <p class="name-tag">Géczi Roland Levente</p>
+          <p>Rezső</p>
+        </div>
+        <div class="grid-item kuci-frame">
+          <a href="#lightbox8">
+            <img src="portrek/kuci.jpg" alt="Kuruci Zoltán Levente">
+          </a>
+          <p class="name-tag">Kuruci Zoltán Levente</p>
+          <p>Kuci</p>
+        </div>
+        <div class="grid-item leves-frame">
+          <a href="#lightbox9">
+            <img src="portrek/leves.jpg" alt="Mursich Levente">
+          </a>
+          <p class="name-tag">Mursich Levente</p>
+          <p>Leves</p>
+        </div>
+        <div class="grid-item mosi-frame">
+          <a href="#lightbox10">
+            <img src="portrek/mosi.jpg" alt="Mosoni Márk">
+          </a>
+          <p class="name-tag">Mosoni Márk</p>
+          <p>Mosi</p>
+        </div>
+        <div class="grid-item dave-frame">
+          <a href="#lightbox11">
+            <img src="portrek/dave.jpg" alt="Nagy Dávid">
+          </a>
+          <p class="name-tag">Nagy Dávid</p>
+          <p>Dave</p>
+        </div>
+        <div class="grid-item rainbow-frame">
+          <a href="#lightbox12">
+            <img src="portrek/max.jpg" alt="Szabó Márton">
+          </a>
+          <p class="name-tag">Szabó Márton</p>
+          <p>Pedro</p>
+        </div>
+        <div class="grid-item spa-frame">
+          <a href="#lightbox13">
+            <img src="portrek/spa.jpg" alt="Sándor Péter Ákos">
+          </a>
+          <p class="name-tag">Sándor Péter Ákos</p>
+          <p>Spá</p>
+        </div>
+        <div class="grid-item ispi-frame">
+          <a href="#lightbox14">
+            <img src="portrek/ispi.jpg" alt="Szilágyi István Márton">
+          </a>
+          <p class="name-tag">Szilágyi István Márton</p>
+          <p>Spongya</p>
+        </div>
+        <div class="grid-item yingyang-frame">
+          <a href="#lightbox15">
+            <img src="portrek/yang.jpg" alt="Szőke Bence">
+          </a>
+          <p class="name-tag">Szőke Bence</p>
+          <p>Yang</p>
+        </div>
+        <div class="grid-item urbi-frame">
+          <a href="#lightbox16">
+            <img src="portrek/urbi.jpg" alt="Urbán Dominik">
+          </a>
+          <p class="name-tag">Urbán Dominik</p>
+          <p>Urbi</p>
+        </div>
+        <div class="grid-item zubi-frame">
+          <a href="#lightbox17">
+            <img src="portrek/zubi.jpg" alt="Zubán Máté Antal">
+          </a>
+          <p class="name-tag">Zubán Máté Antal</p>
+          <p>Zubi</p>
+        </div>
       </div>
     </section>
 
-    <!-- Teachers Section -->
+    <!-- Teachers Section (from original content) -->
     <section id="teachers-content">
       <h2>Teachers</h2>
       <div class="grid teacher-grid">
         <div class="grid-item repasi-frame">
-          <a href="#lightbox19"><img src="pics/ofo.jpg" alt="Répás Sándor"></a>
+          <a href="#lightbox19">
+            <img src="pics/ofo.jpg" alt="Répás Sándor">
+          </a>
           <p class="name-tag">Répás Sándor</p>
         </div>
         <div class="grid-item">
-          <a href="#lightbox20"><img src="pics/eggep.jpg" alt="TEST"></a>
+          <a href="#lightbox20">
+            <img src="pics/eggep.jpg" alt="TEST">
+          </a>
           <p class="name-tag">TEST</p>
         </div>
       </div>
     </section>
 
-    <!-- Media Section -->
+    <!-- Media Section (Pictures & Videos from original) -->
     <section id="media-content">
       <h2>Pictures & Videos</h2>
-      <div class="grid video-grid">
-        <div class="grid-item rainbow-frame">
-          <iframe class="youtube-embed" src="https://www.youtube.com/embed/SSbGSlEz5aM"></iframe>
+      <div class="grid multi-grid">
+        <div class="grid-item">
+          <a href="#lightbox18">
+            <img src="pics/sztanc2.jpg" alt="Osztály tánc">
+          </a>
         </div>
         <div class="grid-item rainbow-frame">
-          <iframe class="youtube-embed" src="https://www.youtube.com/embed/6RdvONNzMEE"></iframe>
+          <iframe class="youtube-embed" src="https://www.youtube.com/embed/SSbGSlEz5aM" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="grid-item rainbow-frame">
+          <iframe class="youtube-embed" src="https://www.youtube.com/embed/6RdvONNzMEE" frameborder="0" allowfullscreen></iframe>
         </div>
       </div>
     </section>
@@ -258,7 +430,6 @@
     <section id="test-content">
       <h2>Test Section</h2>
       <div class="grid test-grid">
-        <!-- Add test items here -->
         <div class="grid-item">
           <p>Test Item 1</p>
         </div>
@@ -276,7 +447,120 @@
       <img src="portrek/robux.jpg" alt="Bács Róbert Lajos">
     </div>
   </div>
-  <!-- Add other lightboxes -->
+  <div id="lightbox2" class="lightbox">
+    <div class="lightbox-content">
+      <a href="#!" class="lightbox-close">×</a>
+      <img src="portrek/bajo.jpg" alt="Bajó Bence">
+    </div>
+  </div>
+  <div id="lightbox3" class="lightbox">
+    <div class="lightbox-content">
+      <a href="#!" class="lightbox-close">×</a>
+      <img src="portrek/batu.jpg" alt="Batu Tamás">
+    </div>
+  </div>
+  <div id="lightbox4" class="lightbox">
+    <div class="lightbox-content">
+      <a href="#!" class="lightbox-close">×</a>
+      <img src="portrek/zsiga.jpg" alt="Begela Balázs">
+    </div>
+  </div>
+  <div id="lightbox5" class="lightbox">
+    <div class="lightbox-content">
+      <a href="#!" class="lightbox-close">×</a>
+      <img src="portrek/ying.jpg" alt="Demény Dávid">
+    </div>
+  </div>
+  <div id="lightbox6" class="lightbox">
+    <div class="lightbox-content">
+      <a href="#!" class="lightbox-close">×</a>
+      <img src="portrek/diaz.jpg" alt="Divinyi Balázs">
+    </div>
+  </div>
+  <div id="lightbox7" class="lightbox">
+    <div class="lightbox-content">
+      <a href="#!" class="lightbox-close">×</a>
+      <img src="portrek/rezso.jpg" alt="Géczi Roland Levente">
+    </div>
+  </div>
+  <div id="lightbox8" class="lightbox">
+    <div class="lightbox-content">
+      <a href="#!" class="lightbox-close">×</a>
+      <img src="portrek/kuci.jpg" alt="Kuruci Zoltán Levente">
+    </div>
+  </div>
+  <div id="lightbox9" class="lightbox">
+    <div class="lightbox-content">
+      <a href="#!" class="lightbox-close">×</a>
+      <img src="portrek/leves.jpg" alt="Mursich Levente">
+    </div>
+  </div>
+  <div id="lightbox10" class="lightbox">
+    <div class="lightbox-content">
+      <a href="#!" class="lightbox-close">×</a>
+      <img src="portrek/mosi.jpg" alt="Mosoni Márk">
+    </div>
+  </div>
+  <div id="lightbox11" class="lightbox">
+    <div class="lightbox-content">
+      <a href="#!" class="lightbox-close">×</a>
+      <img src="portrek/dave.jpg" alt="Nagy Dávid">
+    </div>
+  </div>
+  <div id="lightbox12" class="lightbox">
+    <div class="lightbox-content">
+      <a href="#!" class="lightbox-close">×</a>
+      <img src="portrek/max.jpg" alt="Szabó Márton">
+    </div>
+  </div>
+  <div id="lightbox13" class="lightbox">
+    <div class="lightbox-content">
+      <a href="#!" class="lightbox-close">×</a>
+      <img src="portrek/spa.jpg" alt="Sándor Péter Ákos">
+    </div>
+  </div>
+  <div id="lightbox14" class="lightbox">
+    <div class="lightbox-content">
+      <a href="#!" class="lightbox-close">×</a>
+      <img src="portrek/ispi.jpg" alt="Szilágyi István Márton">
+    </div>
+  </div>
+  <div id="lightbox15" class="lightbox">
+    <div class="lightbox-content">
+      <a href="#!" class="lightbox-close">×</a>
+      <img src="portrek/yang.jpg" alt="Szőke Bence">
+    </div>
+  </div>
+  <div id="lightbox16" class="lightbox">
+    <div class="lightbox-content">
+      <a href="#!" class="lightbox-close">×</a>
+      <img src="portrek/urbi.jpg" alt="Urbán Dominik">
+    </div>
+  </div>
+  <div id="lightbox17" class="lightbox">
+    <div class="lightbox-content">
+      <a href="#!" class="lightbox-close">×</a>
+      <img src="portrek/zubi.jpg" alt="Zubán Máté Antal">
+    </div>
+  </div>
+  <div id="lightbox18" class="lightbox">
+    <div class="lightbox-content">
+      <a href="#!" class="lightbox-close">×</a>
+      <img src="pics/sztanc2.jpg" alt="Osztály tánc">
+    </div>
+  </div>
+  <div id="lightbox19" class="lightbox">
+    <div class="lightbox-content">
+      <a href="#!" class="lightbox-close">×</a>
+      <img src="pics/ofo.jpg" alt="Répás Sándor">
+    </div>
+  </div>
+  <div id="lightbox20" class="lightbox">
+    <div class="lightbox-content">
+      <a href="#!" class="lightbox-close">×</a>
+      <img src="pics/eggep.jpg" alt="TEST">
+    </div>
+  </div>
 
   <footer>
     <p>© 2025 Pedroツ. All rights reserved.</p>
@@ -298,12 +582,10 @@
       link.addEventListener('click', e => {
         e.preventDefault();
         const targetId = e.target.getAttribute('href').substring(1);
-        
         // Hide all sections
         Object.values(sections).forEach(section => {
           if(section) section.style.display = 'none';
         });
-        
         // Show target section
         if(targetId === 'home') {
           sections.home.style.display = 'flex';
@@ -311,14 +593,13 @@
         } else {
           sections.home.style.display = 'none';
           mainSections.style.display = 'block';
-          sections[targetId].style.display = 'block';
+          if(sections[targetId]) sections[targetId].style.display = 'block';
         }
-        
         history.pushState(null, null, `#${targetId}`);
       });
     });
 
-    // Initial load
+    // Initial load: show section based on URL hash (default to home)
     window.addEventListener('load', () => {
       const hash = window.location.hash.substring(1) || 'home';
       if(hash === 'home') {
@@ -327,7 +608,7 @@
       } else {
         sections.home.style.display = 'none';
         mainSections.style.display = 'block';
-        sections[hash].style.display = 'block';
+        if(sections[hash]) sections[hash].style.display = 'block';
       }
     });
 
@@ -337,7 +618,6 @@
         if(e.target === lightbox) window.location.hash = '';
       });
     });
-
     document.querySelectorAll('.lightbox-close').forEach(btn => {
       btn.addEventListener('click', e => {
         e.preventDefault();
@@ -345,7 +625,7 @@
       });
     });
 
-    // Button interactions
+    // Greeting button interaction
     document.getElementById('greet-btn').addEventListener('click', () => {
       alert('A 13.c búcsúzik! Sziasztok és jók legyetek! ツ');
     });
