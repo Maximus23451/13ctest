@@ -189,21 +189,19 @@
       80% { border-color: blue; }
       100% { border-color: purple; }
     }
-    .kucimuv-frame {
-      border: 5px solid red;
-      animation: move 3s ease-in-out infinite;
-      display: inline-block;
-      padding: 20px;
-      position: relative;
+      .rainbow-frame {
+      border: 5px solid;
+      animation: rainbow 4s linear infinite;
+    }
+    @keyframes rainbow {
+      0% { border-color: #FFE4E1 ; }
+      20% { border-color: #F08080 ; }
+      40% { border-color: #FF0000 ; }
+      60% { border-color: #DC143C ; }
+      80% { border-color: #800000 ; }
+      100% { border-color: #3C1414 ; }
     }
 
-    @keyframes move {
-      0%, 100% {
-        transform: translateX(-30px);
-    }
-      50% {
-         transform: translateX(30px);
-    }
     }
     @media (max-width: 1200px) {
       .test-grid { grid-template-columns: repeat(5, 1fr); }
