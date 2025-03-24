@@ -189,6 +189,22 @@
       80% { border-color: blue; }
       100% { border-color: purple; }
     }
+    .kucimuv-frame {
+      border: 5px solid red;
+      animation: move 3s ease-in-out infinite;
+      display: inline-block;
+      padding: 20px;
+      position: relative;
+    }
+
+    @keyframes move {
+      0%, 100% {
+        transform: translateX(-30px);
+    }
+      50% {
+         transform: translateX(30px);
+    }
+    }
     @media (max-width: 1200px) {
       .test-grid { grid-template-columns: repeat(5, 1fr); }
     }
@@ -315,7 +331,7 @@
           <p class="name-tag">Géczi Roland Levente</p>
           <p>Rezső</p>
         </div>
-        <div class="grid-item kuci-frame">
+        <div class="grid-item kucimuv-frame">
           <a href="#lightbox8">
             <img src="portrek/kuci.jpg" alt="Kuruci Zoltán Levente">
           </a>
