@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Teachers | 13C</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script defer src="script.js"></script>
+  <style>
+    html, body { height: 100%; }
+    body { background: linear-gradient(180deg, #0f0f1b, #1a1a2e); font-family: 'Poppins', sans-serif; display: flex; flex-direction: column; }
+    main { flex: 1; }
+    .neon-text { color: #a78bfa; text-shadow: 0 0 5px #a78bfa, 0 0 10px #7c3aed; }
+  </style>
+</head>
+<body class="text-white">
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-50 bg-[#111] bg-opacity-80 backdrop-blur-sm">
+    <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+      <h1 class="text-xl font-bold text-purple-300">13C<span class="text-blue-400">.HU</span></h1>
+      <nav id="main-nav" class="hidden md:flex space-x-6">
+        <a href="index.html" class="hover:text-blue-400">Home</a>
+        <a href="students.html" class="hover:text-blue-400">Students</a>
+        <a href="teachers.html" class="hover:text-blue-400">Teachers</a>
+        <a href="videos.html" class="hover:text-blue-400">Videos</a>
+      </nav>
+      <button id="menu-toggle" class="md:hidden text-white focus:outline-none">☰</button>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 space-y-2">
+      <a href="index.html" class="block hover:text-blue-400">Home</a>
+      <a href="students.html" class="block hover:text-blue-400">Students</a>
+      <a href="teachers.html" class="block hover:text-blue-400">Teachers</a>
+      <a href="videos.html" class="block hover:text-blue-400">Videos</a>
+    </div>
+  </header>
+
+  <main class="py-20 px-6 max-w-6xl mx-auto">
+    <h2 class="text-4xl font-bold neon-text text-center mb-8" data-sr>Meet the Teachers 🧑‍🏫</h2>
+    <div class="grid gap-10 md:grid-cols-2" data-sr>
+      <div class="bg-[#1f1f1f] p-6 rounded shadow-lg">
+        <h3 class="text-xl text-purple-300 font-bold mb-2">Ms. Éva M.</h3>
+        <p class="text-gray-400">Leads creative coding classes and supports students with design systems.</p>
+      </div>
+      <div class="bg-[#1f1f1f] p-6 rounded shadow-lg">
+        <h3 class="text-xl text-purple-300 font-bold mb-2">Mr. Gábor S.</h3>
+        <p class="text-gray-400">Specializes in frontend frameworks and motivates students to build real web apps.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="py-6 text-center bg-black text-gray-400 text-sm mt-auto">
+    © 2025 Pedroツ. All rights reserved.
+  </footer>
+
+  <script>
+    ScrollReveal().reveal('[data-sr]', {
+      delay: 100,
+      distance: '40px',
+      duration: 800,
+      easing: 'ease-out',
+      origin: 'bottom',
+      interval: 200,
+    });
+  </script>
+</body>
+</html>
